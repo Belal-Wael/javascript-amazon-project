@@ -1,0 +1,3 @@
+toFixed(n) ===> method to convert number to string 
+          n--> how many number of fraction.
+          
