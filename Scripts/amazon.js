@@ -115,6 +115,11 @@ document.querySelectorAll(".add-to-cart-button").forEach((btn)=>{
             quantity:1
           });
         }
+         let cartQuantity=0;
+        cart.forEach(element => {
+          cartQuantity+=element.quantity;
+        });
+        document.querySelector(".cart-quantity").innerHTML=cartQuantity;
         console.log(cart);   
     });
 });
