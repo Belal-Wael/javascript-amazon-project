@@ -4,3 +4,23 @@ toFixed(n) ===> method to convert number to string
 in timeLine in vs code we can see all changes step by step this called version history .
 ------------------------------------------------------------------------
 dataset to get Attribute in your nootbook ; 
+------------------------------------------------------------------------
+Module 
+when we have file contain var ex. cart.js and we want use the same name in other file 
+conflict happen because we use the same name, so we use Module
+1 - delete <script src="cart.js"></script> from html file
+and because we want to use this file in amazon.js put type="module" in script tag to amazon file 
+2- export cart from "./data/cart.js" to access it outside this file .
+2 - import cart from "./data/cart.js" in amazon.js ex -> import {cart} from "./data/cart.js"
+  import + name of var that we want to import + from + path of file
+
+  "must open amazon html in live server to see the changes, not open file directly in browser from folders"
+
+
+  benefits of module 
+    - help us avoid naming conflict by using as + new name in import  ex. ->
+    import {cart as myCart} from "./data/cart.js"
+    - we don't have to worry about order of files in html because we import it in js .
+    يعني مش هبقا محتاج اني استدعي الفيل بتاع الكارت قبل الفايل اللي هستخدمه في 
+    - module can use to organize your code .
+------------------------------------------------------------------------
