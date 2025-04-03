@@ -23,4 +23,7 @@ and because we want to use this file in amazon.js put type="module" in script ta
     - we don't have to worry about order of files in html because we import it in js .
     يعني مش هبقا محتاج اني استدعي الفيل بتاع الكارت قبل الفايل اللي هستخدمه في 
     - module can use to organize your code .
+
+    we can import multiple things from file ex
+    import {cart, addToCart} from "./data/cart.js"
 ------------------------------------------------------------------------

@@ -37,7 +37,7 @@
 //     },
 // ]
 
-import { cart } from "../data/cart.js";
+import { cart, addToCart } from "../data/cart.js";
 import { products } from "../data/products.js";
 
 let AllProducts='';
@@ -98,31 +98,21 @@ products.forEach((product)=>{
 
 
 
+
+function updateCart(){
+  let cartQuantity=0;
+        cart.forEach(element => {
+          cartQuantity+=element.quantity;
+        });
+        document.querySelector(".cart-quantity").innerHTML=cartQuantity;
+}
 document.querySelector(".jsCatch").innerHTML=AllProducts;
 
 document.querySelectorAll(".add-to-cart-button").forEach((btn)=>{
     btn.addEventListener("click",()=>{
         const ProductId=btn.dataset.productId; // productName camel case
-        let matchingItem;
-        cart.forEach((item)=>{
-          if(item.id===ProductId){
-            matchingItem=item; 
-          }
-        });
-        if(matchingItem){
-          matchingItem.quantity+=1;
-        }
-        else{
-          cart.push({
-            id:ProductId,
-            quantity:1
-          });
-        }
-         let cartQuantity=0;
-        cart.forEach(element => {
-          cartQuantity+=element.quantity;
-        });
-        document.querySelector(".cart-quantity").innerHTML=cartQuantity;
+        addToCart(ProductId);
+        updateCart();
         console.log(cart);   
     });
 });
