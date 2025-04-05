@@ -1,10 +1,11 @@
 import {cart} from "../data/cart.js";
 import {products} from "../data/products.js";
+import { formatCurrency } from "./utils/money.js";
 
 let cartItemsContainer=document.querySelector(".checkout-grid .order-summary");
 
 let cartItems;
-
+let countOptions=1;
 cart.forEach(element => {
 
     let ProductId=element.id;
@@ -12,7 +13,6 @@ cart.forEach(element => {
     products.forEach(product => {
         if(ProductId===product.id){
             matchedProduct=product;
-            console.log(matchedProduct);
         }
     });
     
@@ -30,7 +30,7 @@ cart.forEach(element => {
           ${matchedProduct.name}
         </div>
         <div class="product-price">
-          $${(matchedProduct.price / 100).toFixed(2)}
+          $${formatCurrency(matchedProduct.priceCents)}
         </div>
         <div class="product-quantity">
           <span>
@@ -52,7 +52,7 @@ cart.forEach(element => {
         <div class="delivery-option">
           <input type="radio" checked
             class="delivery-option-input"
-            name="delivery-option-1">
+            name="delivery-option-${countOptions}">
           <div>
             <div class="delivery-option-date">
               Tuesday, June 21
@@ -65,7 +65,7 @@ cart.forEach(element => {
         <div class="delivery-option">
           <input type="radio"
             class="delivery-option-input"
-            name="delivery-option-1">
+            name="delivery-option-${countOptions}">
           <div>
             <div class="delivery-option-date">
               Wednesday, June 15
@@ -78,7 +78,7 @@ cart.forEach(element => {
         <div class="delivery-option">
           <input type="radio"
             class="delivery-option-input"
-            name="delivery-option-1">
+            name="delivery-option-${countOptions}">
           <div>
             <div class="delivery-option-date">
               Monday, June 13
@@ -92,4 +92,5 @@ cart.forEach(element => {
     </div>
   </div>`
 
+  countOptions++;
 });
