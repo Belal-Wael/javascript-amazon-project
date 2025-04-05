@@ -30,3 +30,5 @@ and because we want to use this file in amazon.js put type="module" in script ta
 
     'so module help us to reuse a lot of code and reduce repetition'
 ------------------------------------------------------------------------
+
+h1.remove(); -- > to remove element from dom.
