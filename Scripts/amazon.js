@@ -100,12 +100,12 @@ products.forEach((product)=>{
 
 
 
-function updateCart(){
+function updateCartQuantity(){
   let cartQuantity=0;
         cart.forEach(element => {
           cartQuantity+=element.quantity;
         });
-        document.querySelector(".cart-quantity").innerHTML=cartQuantity;
+       document.querySelector(".cart-quantity").innerHTML=cartQuantity;
 }
 document.querySelector(".jsCatch").innerHTML=AllProducts;
 
@@ -113,7 +113,6 @@ document.querySelectorAll(".add-to-cart-button").forEach((btn)=>{
     btn.addEventListener("click",()=>{
         const ProductId=btn.dataset.productId; // productName camel case
         addToCart(ProductId);
-        updateCart();
-        console.log(cart);   
+        updateCartQuantity();
     });
 });
