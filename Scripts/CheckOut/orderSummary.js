@@ -1,8 +1,9 @@
 import {cart , removeFromCart , updateOptionId} from "../../data/cart.js";
-import {products} from "../../data/products.js";
+import {products,getProductById} from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js"; // dayjs Library
 import {deliveryOptions} from "../../data/deliveryOptions.js"
+import {renderPaymentSummary} from "./paymentSummary.js"
 
 
 export function renderOrderSummary(){
@@ -14,12 +15,8 @@ export function renderOrderSummary(){
   cart.forEach(element => {
 
       let ProductId=element.id;
-      let matchedProduct;
-      products.forEach(product => {
-          if(ProductId===product.id){
-              matchedProduct=product;
-          }
-      });
+      const matchedProduct=getProductById(ProductId);
+     
 
       const deliverOptionID=element.deliveryOptionId;
       const matchedOption=deliveryOptions.find(option=>option.id===deliverOptionID);
@@ -107,6 +104,7 @@ export function renderOrderSummary(){
         let productId=btn.dataset.productId;
         removeFromCart(productId);
         document.querySelector(`.js-cart-item-container-${productId}`).remove(); // add Element from dom to update the dom after delete from cart.
+        renderPaymentSummary();
       });
   })
 
@@ -115,6 +113,7 @@ export function renderOrderSummary(){
         const optionId=input.dataset.deliveryOptionId;
         const productId=input.dataset.productId;
         updateOptionId(optionId,productId);
+        renderPaymentSummary();
         renderOrderSummary();
     })
   })

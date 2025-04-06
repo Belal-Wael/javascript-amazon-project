@@ -1,5 +1,12 @@
 toFixed(n) ===> method to convert number to string 
           n--> how many number of fraction.
+         "
+         but have a small issue in round 
+          ex. x=2.005
+              x.toFixed(2) = 2.00 but the correct answer 2.01
+              so we round number before use it 
+              Math.round(x).toFixed(2).
+          "
 ------------------------------------------------------------------------
 in timeLine in vs code we can see all changes step by step this called version history .
 ------------------------------------------------------------------------
