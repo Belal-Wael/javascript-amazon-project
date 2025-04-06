@@ -32,3 +32,26 @@ and because we want to use this file in amazon.js put type="module" in script ta
 ------------------------------------------------------------------------
 
 h1.remove(); -- > to remove element from dom.
+------------------------------------------------------------------------
+  "External Libraries"
+  - dayjs  : used to get date and time and add  for example number of days  (helps work with date and time)
+  ex.
+     const today=dayjs();
+     today.add(7,"days")  // number of days and what is this number days ex. "days" , "months" , "years" ...
+      today.formate('dddd,MMMM D')  // saturday , june 10
+
+      esm -> EcmaScript Modules 
+
+
+"
+    default export in module it's another way to export one thing from file 
+    each file have one default export
+
+    export default function addToCart(ProductId){
+      // code
+    }
+
+    وتروح في المكان اللي هتستخدمها فيه 
+    import addToCart from "./data/cart.js"  // without {}
+    each file have one default export
+"
