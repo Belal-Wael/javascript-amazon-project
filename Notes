@@ -44,7 +44,7 @@ h1.remove(); -- > to remove element from dom.
 
 
 "
-    default export in module it's another way to export one thing from file 
+    default export in module its another way to export one thing from file 
     each file have one default export
 
     export default function addToCart(ProductId){
@@ -55,3 +55,8 @@ h1.remove(); -- > to remove element from dom.
     import addToCart from "./data/cart.js"  // without {}
     each file have one default export
 "
+
+----------------------------------------------------------------------------
+
+MVC -- > is a design pattern in software engineering that separates an application into three main components: model, view, and controller.
+and used to organize and design our code .
