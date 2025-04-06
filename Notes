@@ -67,3 +67,10 @@ h1.remove(); -- > to remove element from dom.
 
 MVC -- > is a design pattern in software engineering that separates an application into three main components: model, view, and controller.
 and used to organize and design our code .
+
+-----------------------------------------------------------------------------
+Automated Test :
+     meaning is to make computer test your code instead of you.
+     ex if have fun and want to test it call it and take parameters and check if it work or not from
+     the result of computer .
+-----------------------------------------------------------------------------
