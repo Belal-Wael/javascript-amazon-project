@@ -1,5 +1,5 @@
 // used to test money function  using automated test which mean test by run code in computer.
-import { formatCurrency } from "../Scripts/utils/money.js";
+import { formatCurrency } from "../../Scripts/utils/money.js";
 
 
 // 1 - want to create test suite
