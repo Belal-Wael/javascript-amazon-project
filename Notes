@@ -78,3 +78,8 @@ Automated Test :
 -- Testing Framework
     means use External Library to test our code
     ex. jasmine and mocha
+
+    unit test --> called when test one function that have one work
+    integration test --> called when test function that have more than one work 
+    ex. renderOrderSummary function
+  
