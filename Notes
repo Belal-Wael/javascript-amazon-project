@@ -74,3 +74,7 @@ Automated Test :
      ex if have fun and want to test it call it and take parameters and check if it work or not from
      the result of computer .
 -----------------------------------------------------------------------------
+
+-- Testing Framework
+    means use External Library to test our code
+    ex. jasmine and mocha
