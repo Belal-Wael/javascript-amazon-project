@@ -96,3 +96,27 @@ class is basically an object generator.
 if we create obj 'cart' from class and want to check if this obj 
 is instance of this class we use instanceof keyword.
  ex. console.log(cart instanceof Cart) // true if cart is instance of Cart class
+
+
+ -- to create private property just add # before the name of property.
+   ex.
+   class Cart {
+    #items = [] // private property
+  }
+  'private means this property can not access outside the class'
+  cart.#items.push('item') ---> Error
+   methods also to make it private just add # before the name of method.
+   ex.
+   -------------------------------------
+   class Cart {
+    #items = [] // private property
+   
+    constructor(item){
+      this.#items=item
+    }
+    #addItem(item){
+      #items.push(item)
+    }
+   }
+   -------------------------------------
+   
