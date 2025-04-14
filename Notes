@@ -13,6 +13,9 @@ in timeLine in vs code we can see all changes step by step this called version h
 dataset to get Attribute in your nootbook ; 
 ------------------------------------------------------------------------
 Module 
+الفكره ان في الاخر كل ملفات الجافا اسكريبت بتتجمع مع بعضها 
+
+
 when we have file contain var ex. cart.js and we want use the same name in other file 
 conflict happen because we use the same name, so we use Module
 1 - delete <script src="cart.js"></script> from html file
@@ -28,7 +31,7 @@ and because we want to use this file in amazon.js put type="module" in script ta
     - help us avoid naming conflict by using as + new name in import  ex. ->
     import {cart as myCart} from "./data/cart.js";
     - we don not have to worry about order of files in html because we import it in js .
-    يعني مش هبقا محتاج اني استدعي الفيل بتاع الكارت قبل الفايل اللي هستخدمه في 
+    يعني مش هبقا محتاج اني استدعي الفيل بتاع الكارت قبل الفايل اللي هستخدمه فيه
     - module can use to organize your code .
 
     we can import multiple things from file ex
@@ -43,7 +46,7 @@ h1.remove(); -- > to remove element from dom.
   "External Libraries"
   - dayjs  : used to get date and time and add  for example number of days  (helps work with date and time)
   ex.
-     const today=dayjs();
+     const today=dayjs();  // to get date of today
      today.add(7,"days")  // number of days and what is this number days ex. "days" , "months" , "years" ...
       today.formate('dddd,MMMM D')  // saturday , june 10
 
@@ -82,4 +85,7 @@ Automated Test :
     unit test --> called when test one function that have one work
     integration test --> called when test function that have more than one work 
     ex. renderOrderSummary function
-  
+------------------------------------------------------------------------------
+OPP --> organize your code into obj.
+procedure programming : Write a code step by step. = a function.
+oop - > represent real world object in code.
