@@ -89,3 +89,10 @@ Automated Test :
 OPP --> organize your code into obj.
 procedure programming : Write a code step by step. = a function.
 oop - > represent real world object in code.
+
+-- Class: is specially designed for generating objects.
+class is basically an object generator.
+
+if we create obj 'cart' from class and want to check if this obj 
+is instance of this class we use instanceof keyword.
+ ex. console.log(cart instanceof Cart) // true if cart is instance of Cart class
