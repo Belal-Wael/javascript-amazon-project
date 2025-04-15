@@ -719,4 +719,6 @@ export const products = [
   return new Product(productDetails); // use parent class
 });
 
-console.log(products);
+
+
+

@@ -181,3 +181,21 @@ is instance of this class we use instanceof keyword.
    
 
 -------------------------------------------------------
+
+built in classes : class that already exist in js. provided by js.
+ex.
+  Date() --> this class generate obj that represent current date and time.
+
+  const date = new Date();
+  console.log(date); // Sun Jun 12 2022 12:27:49 GMT+0100 (West Africa Standard Time)
+  console.log(date.toLocaleDateString()); // 6/12/2022
+
+
+  -----------------------------------------
+  function logThis(){
+    console.log(this);
+  }
+
+  logThis(); // undefined
+  logThis.call('hello'); // Hello 
+  .call --> use to call a function but with assign this
