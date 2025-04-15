@@ -119,4 +119,65 @@ is instance of this class we use instanceof keyword.
     }
    }
    -------------------------------------
+   -- Inheritance >> means one class get all the properties of another class
+
+   class child extends parent{
+    //
+   }
+
+   if i have a class parent and have child inherit from parent and child class have a constructor 
+   and want to assign properties that the child inherit it from parent we use super keyword.
+
+   class parent{
+    A;
+    B;
+    constructor(details){
+       this.A=details.A;
+       this.B=details.B;
+    }
+   }
+
+   class child extends parent{
+    c;
+    constructor(details){
+      super() // call parent constructor
+      this.c=details.c;
+    }
+   }
+
+
+   -- if i have method in parent class and i have method with the same name in 
+   child class  and i want to use the parent method in child class we use super keyword.
+-------------------------------------------
+   class parent{
+    A;
+    B;
+    constructor(details){
+       this.A=details.A;
+       this.B=details.B;  
+    } 
+    methodA(){
+      // code
+      return "";
+    }
+   }
+
+   class child extends parent{
+    c;
+    constructor(details){
+      super() // call parent constructor
+      this.c=details.c;
+    }
+    methodA(){
+      super.methodA(); // call parent method
+      return "Hello";
+    }
+
+   }
+
+   and this is called method overriding
+
+   -- polymorphism means many forms 
    
+
+-------------------------------------------------------

@@ -1,3 +1,4 @@
+import { products } from "./products";
 
 class Cart{
     cartItems;
@@ -77,6 +78,9 @@ class Cart{
   }
 
 }
+
+
+
 
   
   
