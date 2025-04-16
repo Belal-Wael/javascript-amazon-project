@@ -6,6 +6,9 @@ import { cart, loadCart } from "../data/cart.js";
 //import '../data/backend-test.js'
 
 
+ 
+
+// ----> 1
 
 // // promise split code into separate steps and then we can wait for one step to finish before going to 
 // // the next step
@@ -28,7 +31,7 @@ import { cart, loadCart } from "../data/cart.js";
 
 
 
-
+// -----> 2
 // we can run loadProducts and loadCart at the same time "this two promises" using promise.all
 
 Promise.all([
@@ -46,6 +49,21 @@ Promise.all([
     renderPaymentSummary();
 });
 
+
+
+// -----> 3
+async function LoadPage(){
+   await loadProductsFetch();
+   await new Promise((resolve)=>{ // return new promise to use solve to to to the next step
+        loadCart(()=>{
+           resolve();
+        });
+    });
+    renderOrderSummary();
+    renderPaymentSummary();
+}
+
+LoadPage();
 
 
 

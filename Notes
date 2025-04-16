@@ -297,3 +297,25 @@ Promise.all([
 ================================================================
 
 fetch : is a better way to make http request.
+
+ -- Async / Await : a better way to handle asynchronous Code.
+
+
+ Async function Test(){ // async make a function return a promise
+     //code
+     return "Value2" // this a resolve
+ }
+
+ Test().then((x)=>{ // because this a promise we can add the next step
+     // code
+     console.log(x); // Value2
+ })
+
+
+-- Await : let us await for a promise to finish before going to the next step.
+
+ we can use await only in async function to wait for a promise to finish before going to the next step.
+
+
+// **** So Async / Await is a better way to handle asynchronous code. ****
+rather than using Callbacks and promises.
