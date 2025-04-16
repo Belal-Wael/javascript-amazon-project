@@ -199,3 +199,18 @@ ex.
   logThis(); // undefined
   logThis.call('hello'); // Hello 
   .call --> use to call a function but with assign this
+
+
+  -- ************************************************************************************ -- 
+
+  HttpRequest :
+   we can make HttpRequest using built in xmlHttpRequest class.
+
+-- how to make or setup HttpRequest :
+  
+   1- const xhr=new XMLHttpRequest(); // create new HttpRequest
+   2- xhr.open('GET','https://jsonplaceholder.typicode.com/posts/1'); // method , url // setup message
+   3- xhr.send();   // send message
+   4- xhr.onload=function(){
+      console.log(xhr.response);
+    }
