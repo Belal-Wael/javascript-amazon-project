@@ -214,3 +214,7 @@ ex.
    4- xhr.onload=function(){
       console.log(xhr.response);
     }
+
+  Callback :
+    function that will be called when HttpRequest finish or when some event happen.
+    called in the future.
