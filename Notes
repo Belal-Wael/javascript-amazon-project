@@ -319,3 +319,24 @@ fetch : is a better way to make http request.
 
 // **** So Async / Await is a better way to handle asynchronous code. ****
 rather than using Callbacks and promises.
+
+// Handle Error 
+ 1- in Callback 
+    xhr.addEventListener("error",function(){
+        console.log("error");
+    })
+
+
+ 2- in Promise
+    .catch((error)=>{
+        console.log(error); // contain information about the error
+    })
+
+
+ 3- in Async / Await 
+    try{
+        // code
+    }catch(error){
+        console.log(error); // contain information about the error
+    }
+--------------------------------------------------------------------
