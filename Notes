@@ -218,3 +218,82 @@ ex.
   Callback :
     function that will be called when HttpRequest finish or when some event happen.
     called in the future.
+
+
+  -- Promise : which are a better way to handle asynchronous code.
+  -- Promise is a object that represent a future value.
+    let use wait for some code to finish. before going to the next step
+    ex. wait for a HttpRequest to finish or wait for a function to finish.
+
+  promise is a class
+  ----------------------------------------------
+  // promise split code into separate steps and then we can wait for one step to finish before going to 
+// the next step
+new Promise((resolve)=>{ // promise take a parameter resolve as a function
+    console.log("start promise");
+    
+    loadProducts(()=>{
+        console.log("products loaded");
+        resolve(); // called to control when to go to  the next step
+    });
+}).then(()=>{
+    console.log("next step");
+});
+-------------------------------------------------
+
+// promise split code into separate steps and then we can wait for one step to finish before going to 
+// the next step
+new Promise((resolve)=>{ // promise take a parameter resolve as a function    
+    loadProducts(()=>{
+        resolve(); // called to control when to go to  the next step
+    });
+}).then(()=>{
+    
+    return new Promise((resolve)=>{ // return new promise to use solve to to to the next step
+        loadCart(()=>{
+           resolve("Value11111"); // every thing use as a parameter in resolve we can 
+                                  // take the value and use it in the next step in then
+        });
+    });
+}).then((x)=>{
+   console.log(x); // Value11111
+    renderOrderSummary();
+    renderPaymentSummary();
+});
+
+
+--- We use promise instead of Callback .
+
+
+
+- promise.all : take an array of promises and return a single promise that resolves when all the 
+promises in the array resolve.
+   run multiple promises at the same time and wait for all of them to finish.
+
+
+   // we can run loadProducts and loadCart at the same time "this two promises" using promise.all
+
+Promise.all([
+    new Promise((resolve)=>{ // promise take a parameter resolve as a function    
+        loadProducts(()=>{
+            resolve(); // called to control when to go to  the next step
+        });
+    }),
+
+    new Promise((resolve)=>{ // return new promise to use solve to to to the next step
+        loadCart(()=>{
+           resolve();
+        });
+    })
+
+
+]).then(()=>{
+    renderOrderSummary();
+    renderPaymentSummary();
+});
+
+
+
+================================================================
+
+fetch : is a better way to make http request.

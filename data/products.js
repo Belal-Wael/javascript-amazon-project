@@ -722,6 +722,31 @@ class Clothing extends Product{
 
 export let products = [];
 
+export function loadProductsFetch(){
+
+  // fetch use promise to wait for a response
+  const promise=fetch("http://supersimplebackend.dev/products").then((response)=>{
+    return response.json(); // return a promise 
+  }).then((productsData)=>{
+    products=productsData.map((productDetails)=>{
+      if(productDetails.type==="clothing"){
+         return new Clothing(productDetails); // use child class
+      }
+       return new Product(productDetails); // use parent class
+    });
+  });
+
+
+  return promise;
+}
+
+// loadProductsFetch().then(()=>{
+
+// });
+
+
+
+// use callback to wait for a response
 export function loadProducts(fn){
   let xhr = new XMLHttpRequest();
   xhr.open("GET", "http://supersimplebackend.dev/products");
@@ -733,6 +758,7 @@ export function loadProducts(fn){
        return new Product(productDetails); // use parent class
     });
     fn();
+    console.log("Products Loaded");
   });
   xhr.send();
 }

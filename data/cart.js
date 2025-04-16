@@ -61,3 +61,15 @@ export function updateOptionId(optionId,ProductId){
      }
    })
 }
+
+
+
+export function loadCart(fn){
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", "http://supersimplebackend.dev/products");
+  xhr.addEventListener("load",()=>{
+   console.log("Cart Loaded");
+    fn();
+  });
+  xhr.send();
+}
